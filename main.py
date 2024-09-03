@@ -66,28 +66,6 @@ print("y_true (first 10 elements):", y_true[:10])
 print("y_pred (first 10 elements):", y_pred[:10])
 
 
-# Accuracy: 0.881
-# Accuracy for label positive: 0.924
-# Accuracy for label negative: 0.960
-# Accuracy for label neutral: 0.846
-
-# Classification Report:
-#               precision    recall  f1-score   support
-
-#     positive       0.76      0.92      0.84        66
-#     negative       0.92      0.96      0.94        25
-#      neutral       0.95      0.85      0.89       136
-
-#     accuracy                           0.88       227
-#    macro avg       0.88      0.91      0.89       227
-# weighted avg       0.89      0.88      0.88       227
-
-
-# Confusion Matrix:
-# [[ 61   0   5]
-#  [  0  24   1]
-#  [ 19   2 115]]
-
 
 def find_all_linear_names(model):
     cls = bnb.nn.Linear4bit 
@@ -148,13 +126,13 @@ trainer = SFTTrainer(
     train_dataset=train_data,
     eval_dataset=eval_data,
     peft_config=peft_config,
-    dataset_text_field="text",               # The field name in the dataset containing the text
+    dataset_text_field="text",               
     tokenizer=tokenizer,
-    max_seq_length=512,                      # Max sequence length for padding/truncation
-    packing=False,                           # No packing of multiple examples into one input sequence
+    max_seq_length=512,                     
+    packing=False,                           
     dataset_kwargs={
-        "add_special_tokens": False,         # Do not add special tokens, based on your previous settings
-        "append_concat_token": False,        # Do not append concatenation token
+        "add_special_tokens": False,         
+        "append_concat_token": False,        
     }
 )
 
