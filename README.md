@@ -4,4 +4,5 @@
 
 - **Fine-tuning Llama-3.1 8B for Sentimental Analysis on Financial Domain**: A project on [Weights & Biases](https://wandb.ai/kajuyerim-bo-azi-i-niversitesi/Fine%20tuning%20LLama3.1%208b%20for%20Sentimental%20Analysis%20on%20Financial%20Domain?nw=nwuserkajuyerim).
 
+- **Dataset used for fine-tuning**: [takala/financial_phrasebank](https://huggingface.co/datasets/takala/financial_phrasebank).
 Add your own huggingface and wandb token before cloning the repo
